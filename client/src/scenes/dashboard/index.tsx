@@ -1,9 +1,10 @@
-import DashBoardBox from '@/components/DashboardBox';
-import { Box, useMediaQuery, useTheme } from '@mui/material';
+import { Box, useMediaQuery } from '@mui/material';
+import Row1 from './Row1';
+import Row2 from './Row2';
+import Row3 from './Row3';
 
 
-// eslint-disable-next-line 
-type Props = {};
+
 
 const gridTemplateLargeScreens = `
   "a b c"
@@ -49,9 +50,9 @@ const gridTemplateSmallScreens =
 "j"
 "j"
 ;
-const Dashboard = (props: Props) => {
+const Dashboard = () => {
   const isAboveMediumScreens = useMediaQuery ("(min-width: 1200px)")
-  const { palette } = useTheme();
+  
 
   return (
     <Box
@@ -72,16 +73,9 @@ const Dashboard = (props: Props) => {
     }
     >
       
-      <DashBoardBox sx={{ gridArea: "a",  }}></DashBoardBox>
-      <DashBoardBox sx={{ gridArea: "b",  }}></DashBoardBox>
-      <DashBoardBox sx={{ gridArea: "c",  }}></DashBoardBox>
-      <DashBoardBox sx={{ gridArea: "d", }}></DashBoardBox>
-      <DashBoardBox sx={{ gridArea: "e",  }}></DashBoardBox>
-      <DashBoardBox sx={{ gridArea: "f",  }}></DashBoardBox>
-      <DashBoardBox sx={{ gridArea: "g", }}></DashBoardBox>
-      <DashBoardBox sx={{ gridArea: "h",  }}></DashBoardBox>
-      <DashBoardBox sx={{ gridArea: "i", }}></DashBoardBox>
-      <DashBoardBox sx={{ gridArea: "j", }}></DashBoardBox>
+     <Row1 />
+     <Row2 />
+     <Row3 />
     </Box>
   );
 };
