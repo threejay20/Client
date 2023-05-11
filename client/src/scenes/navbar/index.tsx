@@ -18,7 +18,7 @@ const Navbar = (props: Props) => {
         {/* LEFT SIDE */}
         <FlexBetween gap="0.75rem">
             <PixIcon sx={{ fontSize: "28px "}}/>
-            <Typography> Justin is Special </Typography>
+            <Typography> Finanseer </Typography>
 
 
         </FlexBetween>
