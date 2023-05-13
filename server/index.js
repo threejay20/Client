@@ -20,18 +20,17 @@ app.use(cors());
 
 
 /* MONGOOSE SETUP */
-const uri = "mongodb+srv://justinjohnson:<password>@cluster0.kkgewj8.mongodb.net/";
+
 const PORT = process.env.PORT || 9000;
 mongoose
-  .connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
+.connect(process.env.MONGO_URL, {
+    useNewUrlparser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
-  })
-  .then(() => {
-    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-  })
-  .catch((error) => console.log(`${error} did not connect`));
-
+})
+.then(async () => {
+    app.listen(PORT, () => console.log( `Server Port: ${PORT}`))
+})
+.catch((error) => console.log (`${error} did not connect`));
 
 
