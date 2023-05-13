@@ -17,6 +17,21 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(cors());
 
-console.log("Justin is great")
+
 
 /* MONGOOSE SETUP */
+const uri = "mongodb+srv://justinjohnson:<password>@cluster0.kkgewj8.mongodb.net/";
+const PORT = process.env.PORT || 9000;
+mongoose
+  .connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  })
+  .then(() => {
+    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+  })
+  .catch((error) => console.log(`${error} did not connect`));
+
+
+
