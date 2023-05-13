@@ -23,7 +23,7 @@ app.use(cors());
 
 const PORT = process.env.PORT || 9000;
 mongoose
-.connect(process.env.MONGO_URL, {
+.connect(process.env.MONGO_URI, {
     useNewUrlparser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -32,5 +32,4 @@ mongoose
     app.listen(PORT, () => console.log( `Server Port: ${PORT}`))
 })
 .catch((error) => console.log (`${error} did not connect`));
-
 
